@@ -3,7 +3,7 @@ document.getElementById('submitButton').addEventListener('click', (e) => {
     let bookShelf = document.getElementById('book-container');
     let searchInput = document.getElementById('searchInput').value;
     fetch(`https://openlibrary.org/search.json?q=${searchInput}`)
-        .then(res => res.json())
+        .then(results => results.json())
         .then(data => {
             console.log(data);
             const bookLoad = (data) => {
