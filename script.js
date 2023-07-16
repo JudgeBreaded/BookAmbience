@@ -9,7 +9,7 @@ document.getElementById('submitButton').addEventListener('click', (e) => {
             const bookLoad = (data) => {
                 let bookData = data.docs.map(bookTitles => {
                     return `<div class='col-4 mb-3'>
-                        <div class="card col-4 mb-3" style="width: 18rem;">
+                        <div class="card" style="width: 18rem height: 18rem;">
                             <img class="card-img-top" src="https://covers.openlibrary.org/b/id/${bookTitles.cover_i}.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">${bookTitles.title}</h5>
