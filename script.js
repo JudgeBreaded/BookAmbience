@@ -8,13 +8,18 @@ document.getElementById('submitButton').addEventListener('click', (e) => {
             console.log(data);
             const bookLoad = (data) => {
                 let bookData = data.docs.map(bookTitles => {
+                    let bookInfo = {
+                        title: bookTitles.title,
+                        cover: `https://covers.openlibrary.org/b/id/${bookTitles.cover_i}.jpg`
+                    };
+                    localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
                     return `<div class='col-4 mb-3'>
                         <div class="card" style="width: 18rem height: 18rem;">
                             <img class="card-img-top" src="https://covers.openlibrary.org/b/id/${bookTitles.cover_i}.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">${bookTitles.title}</h5>
                                 <p class="card-text">${bookTitles.first_publish_year}</p>
-                                <a href="#" class="btn btn-primary">Example</a>
+                                <a href="infoTable.html" class="btn btn-primary">More Info</a>
                             </div>
                         </div>
                     </div>`;
