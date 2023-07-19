@@ -1,0 +1,7 @@
+body {
+    background-color: blanchedalmond;
+}
+.conainer{
+    display:flex;
+    margin-top: 10%;
+}
