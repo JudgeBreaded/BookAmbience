@@ -51,7 +51,7 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
                                 <div class="card-body">
                                     <h5 class="card-title">${musicInfo.trackName}</h5>
                                     <p class="card-text">${musicInfo.artistName}</p>
-                                    <a href="" class="btn btn-primary">More Info</a>
+                                    <a href="${musicInfo.previewUrl}" class="btn btn-primary">Preview</a>
                                 </div>
                             </div>
                         </div>`;
