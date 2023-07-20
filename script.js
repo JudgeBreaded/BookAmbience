@@ -8,6 +8,11 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
             console.log(data);
             const bookLoad = (data) => {
                 let bookData = data.docs.map(bookTitles => {
+                    let bookPicUrl = 'src="https://covers.openlibrary.org/b/id/'
+                    if (typeof bookTitles.cover_i === 'undefined'){
+                        bookTitles.cover_i = ''
+                        bookPicUrl = 'src="./images/imageMissing.png"'
+                    }
                     let bookInfo = {
                         title: bookTitles.title,
                         cover: `https://covers.openlibrary.org/b/id/${bookTitles.cover_i}.jpg`
@@ -15,7 +20,7 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
                     localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
                     return `<div class='col-2 mb-3'>
                         <div class="card" style="width: 150px height: 150px;">
-                            <img class="card-img-top" src="https://covers.openlibrary.org/b/id/${bookTitles.cover_i}-M.jpg" alt="Card image cap">
+                            <img class="card-img-top" ${bookPicUrl}${bookTitles.cover_i}-L.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">${bookTitles.title}</h5>
                                 <p class="card-text">${bookTitles.first_publish_year}</p>
