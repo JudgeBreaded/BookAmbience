@@ -18,7 +18,7 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
                         cover: `https://covers.openlibrary.org/b/id/${bookTitles.cover_i}.jpg`
                     };
                     localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
-                    return `<div class='col-2 mb-3'>
+                    return `<div class='col-sm-6 col-md-4 col-lg-3 mb-3'>
                         <div class="card" style="width: 150px height: 150px;">
                             <img class="card-img-top" ${bookPicUrl}${bookTitles.cover_i}-L.jpg" alt="Card image cap">
                             <div class="card-body">
@@ -50,7 +50,7 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
                             cover: musicInfo.artworkUrl100
                         };
                         localStorage.setItem(musicInfo.trackName, JSON.stringify(musicExtra))
-                        return `<div class='col-2 mb-3'>
+                        return `<div class='col-sm-6 col-md-4 col-lg-3 mb-3'>
                             <div class="card" style="width: 150px height: 150px;">
                                 <img class="card-img-top" src="${musicInfo.artworkUrl100}" alt="Card image cap">
                                 <div class="card-body">
