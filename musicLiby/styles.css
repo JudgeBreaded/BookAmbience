@@ -5,3 +5,7 @@ body {
     display:flex;
     margin-top: 10%;
 }
+.book-card {
+    max-width: 300px; 
+    margin: 0 auto; 
+}
