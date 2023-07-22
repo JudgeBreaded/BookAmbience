@@ -72,7 +72,8 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
             e.preventDefault();
             let bookShelf = document.getElementById('book-container');
             const genreGenerator = () =>{
-            let genreList = ["Forest Escape", 'Ocean Landscape','Fable ost', 'medieval ambience','desert ambience', 'dungeon ambience', 'battle ambience', 'celtic ambience', 'how to train your dragon', 'scotland ambience', 'Space Ambience', 'cosmic horror']
+            let genreList = ["Forest Escape", 'Ocean Landscape','Fable ost', 'medieval ambience','desert ambience', 'dungeon ambience',
+             'battle ambience', 'celtic ambience', 'how to train your dragon', 'scotland ambience', 'Space Ambience', 'cosmic horror']
             console.log(genreGenerator)
             let i = Math.floor(Math.random() * 11)
             console.log(i)
