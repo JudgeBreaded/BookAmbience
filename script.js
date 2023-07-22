@@ -18,8 +18,9 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
                         cover: `https://covers.openlibrary.org/b/id/${bookTitles.cover_i}.jpg`
                     };
                     localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
-                    return `<div class='col-2 mb-3 col-md-4 col-lg-3 mb-3'>
-                        <div class="card text-center" style="width: 150px height: 150px;">
+                    return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
+                    
+                        <div class="card text-center">
                             <img class="card-img-top" ${bookPicUrl}${bookTitles.cover_i}-L.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">${bookTitles.title}</h5>
@@ -50,16 +51,15 @@ document.getElementById('musicButton').addEventListener('click', (e) => {
                         cover: musicInfo.artworkUrl100
                     };
                     localStorage.setItem(musicInfo.trackName, JSON.stringify(musicExtra))
-                    return `<div class='col-2 col-md-3 col-lg-4 mb-3'>
+                    return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
                             <div class="card text-center" style="width: 150px height: 150px;">
                                 <img class="card-img-top" src="${musicInfo.artworkUrl100}" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${musicInfo.trackName}</h5>
                                     <p class="card-text">${musicInfo.artistName}</p>
-                                    <audio controls volume>
+                                    <audio controls volume style="width:100%">
                                             <source src="${musicInfo.previewUrl}" volume=0.2">
                                             </audio>
-                                    <a href="${musicInfo.previewUrl}" class="btn btn-primary">Preview</a>
                                 </div>
                             </div>
                         </div>`;
@@ -92,13 +92,15 @@ document.getElementById('musicRandom').addEventListener('click', (e) => {
                         cover: musicInfo.artworkUrl100
                     };
                     localStorage.setItem(musicInfo.trackName, JSON.stringify(musicExtra))
-                    return `<div class='col-2 mb-3 col-sm-6 col-md-4 col-lg-3 col-xs-12'>
+                    return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
                                 <div class="card text-center" style="width: 150px height: 150px;">
                                     <img class="card-img-top" src="${musicInfo.artworkUrl100}" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">${musicInfo.trackName}</h5>
                                         <p class="card-text">${musicInfo.artistName}</p>
-                                        <a href="${musicInfo.previewUrl}" class="btn btn-primary">Preview</a>
+                                        <audio controls volume style="width:100%">
+                                            <source src="${musicInfo.previewUrl}" volume=0.2">
+                                            </audio>
                                     </div>
                                 </div>
                             </div>`;
@@ -135,7 +137,7 @@ document.getElementById('bookRandom').addEventListener('click', (e) => {
                         cover: `https://covers.openlibrary.org/b/id/${bookTitles.cover_id}-M.jpg`
                     };
                     localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
-                    return `<div class='col-2 mb-3 col-md-4 col-lg-3 mb-3'>
+                    return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
                         <div class="card text-center" style="width: 150px height: 150px;">
                             <img class="card-img-top" src="${bookInfo.cover}" alt="Card image cap">
                             <div class="card-body">

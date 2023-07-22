@@ -1,5 +1,6 @@
 body{
     background-color: beige;
+
 }
 .search-container {
     display: flex;
@@ -34,4 +35,8 @@ body{
 audio::-webkit-textfield-decoration-container{
     background-color: blue; /* Set the background color of the controls */
     color: #333333; /* Set the color of the controls */
+}
+
+.player{
+  width: auto;
 }
