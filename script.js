@@ -20,8 +20,8 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
                     localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
                     return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
                     
-                        <div class="card text-center">
-                            <img class="card-img-top" ${bookPicUrl}${bookTitles.cover_i}-L.jpg" alt="Card image cap">
+                        <div class="card text-center h-100" style="width: 150px height: 150px;">
+                            <img class="card-img-top h-75" ${bookPicUrl}${bookTitles.cover_i}-L.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">${bookTitles.title}</h5>
                                 <p class="card-text">${bookTitles.first_publish_year}</p>
@@ -52,7 +52,7 @@ document.getElementById('musicButton').addEventListener('click', (e) => {
                     };
                     localStorage.setItem(musicInfo.trackName, JSON.stringify(musicExtra))
                     return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
-                            <div class="card text-center" style="width: 150px height: 150px;">
+                            <div class="card text-center h-100" style="width: 150px height: 150px;">
                                 <img class="card-img-top" src="${musicInfo.artworkUrl100}" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${musicInfo.trackName}</h5>
@@ -93,7 +93,7 @@ document.getElementById('musicRandom').addEventListener('click', (e) => {
                     };
                     localStorage.setItem(musicInfo.trackName, JSON.stringify(musicExtra))
                     return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
-                                <div class="card text-center" style="width: 150px height: 150px;">
+                                <div class="card text-center h-100" style="width: 150px height: 150px;">
                                     <img class="card-img-top" src="${musicInfo.artworkUrl100}" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">${musicInfo.trackName}</h5>
@@ -138,8 +138,8 @@ document.getElementById('bookRandom').addEventListener('click', (e) => {
                     };
                     localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
                     return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
-                        <div class="card text-center" style="width: 150px height: 150px;">
-                            <img class="card-img-top" src="${bookInfo.cover}" alt="Card image cap">
+                        <div class="card text-center h-100" style="width: 150px height: 150px;">
+                            <img class="card-img-top h-75" src="${bookInfo.cover}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">${bookTitles.title}</h5>
                                 <p class="card-text">${bookTitles.first_publish_year}</p>
