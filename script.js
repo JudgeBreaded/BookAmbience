@@ -53,7 +53,7 @@ document.getElementById('musicButton').addEventListener('click', (e) => {
                     localStorage.setItem(musicInfo.trackName, JSON.stringify(musicExtra))
                     return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
                             <div class="card text-center h-100" style="width: 150px height: 150px;">
-                                <img class="card-img-top" src="${musicInfo.artworkUrl100}" alt="Card image cap">
+                                <img class="card-img-top h-75" src="${musicInfo.artworkUrl100}" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${musicInfo.trackName}</h5>
                                     <p class="card-text">${musicInfo.artistName}</p>
@@ -93,8 +93,8 @@ document.getElementById('musicRandom').addEventListener('click', (e) => {
                     };
                     localStorage.setItem(musicInfo.trackName, JSON.stringify(musicExtra))
                     return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
-                                <div class="card text-center h-100" style="width: 150px height: 150px;">
-                                    <img class="card-img-top" src="${musicInfo.artworkUrl100}" alt="Card image cap">
+                                <div class="card text-center h-100" style="width: 150px height: 125px;">
+                                    <img class="card-img-top h-75" src="${musicInfo.artworkUrl100}" alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title">${musicInfo.trackName}</h5>
                                         <p class="card-text">${musicInfo.artistName}</p>
