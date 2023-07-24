@@ -15,7 +15,8 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
                     }
                     let bookInfo = {
                         title: bookTitles.title,
-                        cover: `https://covers.openlibrary.org/b/id/${bookTitles.cover_i}.jpg`
+                        cover: `https://covers.openlibrary.org/b/id/${bookTitles.cover_i}.jpg`,
+                        moreInfo: `https://openlibrary.org${bookTitles.key}`
                     };
                     localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
                     return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
@@ -25,7 +26,7 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
                             <div class="card-body">
                                 <h5 class="card-title">${bookTitles.title}</h5>
                                 <p class="card-text">${bookTitles.first_publish_year}</p>
-                                <a href="infoTable.html" class="btn btn-primary">More Info</a>
+                                <button onclick="newTab('${bookInfo.moreInfo}')" class="btn btn-primary">More Info</button>
                             </div>
                         </div>
                     </div>`;
@@ -134,8 +135,9 @@ document.getElementById('bookRandom').addEventListener('click', (e) => {
                     }
                     let bookInfo = {
                         title: bookTitles.title,
-                        cover: `https://covers.openlibrary.org/b/id/${bookTitles.cover_id}-M.jpg`
-                    };
+                        cover: `https://covers.openlibrary.org/b/id/${bookTitles.cover_id}-M.jpg`,
+                        moreInfo: `https://openlibrary.org${bookTitles.key}`,
+                    };    
                     localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
                     return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
                         <div class="card text-center h-100" style="width: 150px height: 150px;">
@@ -143,7 +145,7 @@ document.getElementById('bookRandom').addEventListener('click', (e) => {
                             <div class="card-body">
                                 <h5 class="card-title">${bookTitles.title}</h5>
                                 <p class="card-text">${bookTitles.first_publish_year}</p>
-                                <a href="infoTable.html" class="btn btn-primary">More Info</a>
+                                <button onclick="newTab('${bookInfo.moreInfo}')" class="btn btn-primary">More Info</button>
                             </div>
                         </div>
                     </div>`;
@@ -152,10 +154,10 @@ document.getElementById('bookRandom').addEventListener('click', (e) => {
 
             };
             bookShelf.innerHTML = bookLoad(data);
+            
         })
 })
-                // let Booktitles = [
-                //     cover_i: 1231245,
-                //     Title: 'winnie the pooh'
-                //     Author: 'German Man'
-                // ]
+                function newTab(url) {
+                    window.open(
+                    url, "_blank");
+                }
