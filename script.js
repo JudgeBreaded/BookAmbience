@@ -115,15 +115,15 @@ document.getElementById('musicRandom').addEventListener('click', (e) => {
 document.getElementById('bookRandom').addEventListener('click', (e) => {
     e.preventDefault();
     let bookShelf = document.getElementById('book-container');
-    // const genreGenerator = () =>{
-    // let genreList = ["Forest Escape", 'Ocean Landscape','Fable ost', 'medieval ambience','desert ambience', 'dungeon ambience', 'battle ambience', 'celtic ambience', 'how to train your dragon', 'scotland ambience', 'Space Ambience', 'cosmic horror']
-    // console.log(genreGenerator)
-    // let i = Math.floor(Math.random() * 11)
-    // console.log(i)
-    // return genreList[i]
-    // }
-    let searchInput = document.getElementById('searchInput1').value;
-    fetch(`https://openlibrary.org/subjects/${searchInput.toLowerCase()}.json?limit=25`)
+    const genreGenerator = () =>{
+    let genreList = ["Love", 'Construction','Battle', 'Architecture','Fantasy', 'Dragons', 'Anime', 'History', 'Science', 'Future', 'Warhammer', 'Mystery', 'Heartbreak']
+    console.log(genreGenerator)
+    let i = Math.floor(Math.random() * 13)
+    console.log(i)
+    return genreList[i]
+    }
+    //let searchInput = document.getElementById('searchInput1').value;
+    fetch(`https://openlibrary.org/subjects/${genreGenerator().toLowerCase()}.json?limit=25`)
         .then(results => results.json())
         .then(data => {
             console.log(data);
