@@ -22,7 +22,7 @@ body{
     font-size: 14px;
   }
   
-  .search-group button {
+  /* .search-group button {
     background-color: #blue;
     color: #fff;
     padding: 10px 20px;
@@ -30,7 +30,7 @@ body{
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
-  }
+  } */
   
 audio::-webkit-textfield-decoration-container{
     background-color: blue; /* Set the background color of the controls */
@@ -39,4 +39,20 @@ audio::-webkit-textfield-decoration-container{
 
 .player{
   width: auto;
+}
+
+h1{
+  font-family: fantasy;
+}
+
+@media (min-width: 576px) {
+  .mainContainer {
+    height: 1500%;
+  }
+}
+
+@media (min-width:1320px) {
+  .lineBreak {
+    
+  }
 }

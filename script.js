@@ -116,7 +116,7 @@ document.getElementById('bookRandom').addEventListener('click', (e) => {
     e.preventDefault();
     let bookShelf = document.getElementById('book-container');
     const genreGenerator = () =>{
-    let genreList = ["Love", 'Construction','Battle', 'Architecture','Fantasy', 'Dragons', 'Anime', 'History', 'Science', 'Future', 'Warhammer', 'Mystery', 'Heartbreak']
+    let genreList = ["Love", 'Construction','Battle', 'Architecture','Fantasy', 'Dragons', 'Anime', 'History', 'Science', 'Future', 'Warhammer', 'Mystery', 'Heartbreak', 'Death']
     console.log(genreGenerator)
     let i = Math.floor(Math.random() * 13)
     console.log(i)
