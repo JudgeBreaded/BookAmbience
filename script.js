@@ -1,3 +1,4 @@
+
 document.getElementById('bookButton').addEventListener('click', (e) => {
     e.preventDefault();
     let bookShelf = document.getElementById('book-container');
@@ -19,9 +20,9 @@ document.getElementById('bookButton').addEventListener('click', (e) => {
                         moreInfo: `https://openlibrary.org${bookTitles.key}`
                     };
                     localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
-                    return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
+                    return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3;'>
                     
-                        <div class="card text-center h-100" style="width: 150px height: 150px;">
+                        <div class="card text-center h-100">
                             <img class="card-img-top h-75" ${bookPicUrl}${bookTitles.cover_i}-L.jpg" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">${bookTitles.title}</h5>
@@ -53,7 +54,7 @@ document.getElementById('musicButton').addEventListener('click', (e) => {
                     };
                     localStorage.setItem(musicInfo.trackName, JSON.stringify(musicExtra))
                     return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
-                            <div class="card text-center h-100" style="width: 150px height: 150px;">
+                            <div class="card text-center h-100" style="width: 150px height: 100px;">
                                 <img class="card-img-top h-75" src="${musicInfo.artworkUrl100}" alt="Card image cap">
                                 <div class="card-body">
                                     <h5 class="card-title">${musicInfo.trackName}</h5>
@@ -81,7 +82,6 @@ document.getElementById('musicRandom').addEventListener('click', (e) => {
         console.log(i)
         return genreList[i]
     }
-    //let searchInput = document.getElementById('searchInput1').value;
     fetch(`https://itunes.apple.com/search?media=music&attribute&term=${genreGenerator()}`)
         .then(results => results.json())
         .then(data => {
@@ -115,14 +115,13 @@ document.getElementById('musicRandom').addEventListener('click', (e) => {
 document.getElementById('bookRandom').addEventListener('click', (e) => {
     e.preventDefault();
     let bookShelf = document.getElementById('book-container');
-    const genreGenerator = () =>{
-    let genreList = ["Love", 'Construction','Battle', 'Architecture','Fantasy', 'Dragons', 'Anime', 'History', 'Science', 'Future', 'Warhammer', 'Mystery', 'Heartbreak', 'Death']
-    console.log(genreGenerator)
-    let i = Math.floor(Math.random() * 13)
-    console.log(i)
-    return genreList[i]
+    const genreGenerator = () => {
+        let genreList = ["Love", 'Construction', 'Battle', 'Architecture', 'Fantasy', 'Dragons', 'Anime', 'History', 'Science', 'Future', 'Warhammer', 'Mystery', 'Heartbreak', 'Death']
+        console.log(genreGenerator)
+        let i = Math.floor(Math.random() * 13)
+        console.log(i)
+        return genreList[i]
     }
-    //let searchInput = document.getElementById('searchInput1').value;
     fetch(`https://openlibrary.org/subjects/${genreGenerator().toLowerCase()}.json?limit=25`)
         .then(results => results.json())
         .then(data => {
@@ -137,7 +136,7 @@ document.getElementById('bookRandom').addEventListener('click', (e) => {
                         title: bookTitles.title,
                         cover: `https://covers.openlibrary.org/b/id/${bookTitles.cover_id}-M.jpg`,
                         moreInfo: `https://openlibrary.org${bookTitles.key}`,
-                    };    
+                    };
                     localStorage.setItem(bookTitles.title, JSON.stringify(bookInfo))
                     return `<div class='col-12 col-sm-6 col-md-4 col-lg-3 mb-3 mt-3'>
                         <div class="card text-center h-100" style="width: 150px height: 150px;">
@@ -154,10 +153,10 @@ document.getElementById('bookRandom').addEventListener('click', (e) => {
 
             };
             bookShelf.innerHTML = bookLoad(data);
-            
+
         })
 })
-                function newTab(url) {
-                    window.open(
-                    url, "_blank");
-                }
+function newTab(url) {
+    window.open(
+        url, "_blank");
+}
